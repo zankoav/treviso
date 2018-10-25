@@ -2,6 +2,18 @@
 
     $lang = get_current_lang();
     global $menu_about;
+    global $menu_portfolio ;
+    global $menu_team ;
+    global $menu_contacts ;
+    global $title_ourWorks ;
+    global $title_about ;
+    global $title_ourTeam ;
+    global $title_contactUs ;
+    global $ph_name ;
+    global $ph_email;
+    global $ph_message ;
+    global $b_close;
+    global $b_sendMessage;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,13 +78,13 @@
                     <a class="page-scroll" href="#about"><?=$menu_about[$lang];?></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    <a class="page-scroll" href="#portfolio"><?=$menu_portfolio[$lang];?></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#team">Team</a>
+                    <a class="page-scroll" href="#team"><?=$menu_team[$lang];?></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
+                    <a class="page-scroll" href="#contact"><?=$menu_contacts[$lang];?></a>
                 </li>
             </ul>
 
@@ -87,7 +99,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h1>Our Works</h1>
+                    <h1><?= $title_ourWorks[$lang];?></h1>
                     <p>Our portfolio is the best way to show our work, you can see here a big range of our work. Check
                         them all and you will find what you are looking for.</p>
                 </div>
@@ -191,7 +203,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h2>ABOUT</h2>
+                    <h2><?= $title_about[$lang];?></h2>
                 </div>
             </div>
         </div>
@@ -288,7 +300,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h2>Our Team</h2>
+                    <h2><?= $title_ourTeam[$lang];?></h2>
                 </div>
             </div>
         </div>
@@ -344,7 +356,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h2>Contact Us</h2>
+                    <h2><?= $title_contactUs[$lang];?></h2>
                     <p>If you have some Questions or need Help! Please Contact Us!<br>We make Cool and Clean Design for
                         your Business</p>
                 </div>
@@ -356,14 +368,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name *" id="name" required=""
+                                <input type="text" class="form-control" placeholder="<?= $ph_name[$lang];?>" id="name" required=""
                                        data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Your Email *" id="email"
+                                <input type="email" class="form-control" placeholder="<?= $ph_email[$lang];?>" id="email"
                                        required="" data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -372,7 +384,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Your Message *" id="message" required=""
+                                <textarea class="form-control" placeholder="<?= $ph_message[$lang];?>" id="message" required=""
                                           data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -382,7 +394,7 @@
                     <div class="row">
                         <div class="col-lg-12 text-center">
                             <div id="success"></div>
-                            <button type="submit" class="btn">Send Message</button>
+                            <button type="submit" class="btn"><?= $b_sendMessage[$lang];?></button>
                         </div>
                     </div>
                 </form>
@@ -414,7 +426,7 @@
                 <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?= $b_close[$lang];?></button>
             </div>
         </div>
     </div>
