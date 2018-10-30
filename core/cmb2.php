@@ -118,6 +118,65 @@ function treviso_register_theme_options_metabox() {
         'id'         => 'title_en',
         'type'       => 'text',
     ) );
+
+/*------------------------------add team
+*/
+    $cmb_options->add_field(array(
+        'name' => esc_html__('section our team', 'treviso'),
+        'id'=>'our_team_title',
+        'type'=>'title'
+    ));
+    $group_our_team = $cmb_options-> add_field(array(
+        'id'=> $prefix.'team',
+        'type'=>'group',
+        'description' => esc_html__( 'Add member', 'treviso' ),
+        'options'     => array(
+            'group_title'   => esc_html__( 'member {#}', 'treviso' ), // {#} gets replaced by row number
+            'add_button'    => esc_html__( 'Add Another member', 'treviso' ),
+            'remove_button' => esc_html__( 'Remove member', 'treviso' ),
+            'sortable'      => true,
+            // 'closed'     => true, // true to have the groups closed by default
+        ),
+    ));
+
+    $cmb_options->add_group_field( $group_our_team, array(
+        'name'       => esc_html__( 'photo', 'treviso' ),
+        'id'         => 'photo',
+        'type'       => 'file'
+    ) );
+    $cmb_options->add_group_field( $group_our_team, array(
+        'name'       => esc_html__( 'Member name RU', 'treviso' ),
+        'id'         => 'name_ru',
+        'type'       => 'text'
+    ) );
+    $cmb_options->add_group_field( $group_our_team, array(
+        'name'       => esc_html__( 'Member name EN', 'treviso' ),
+        'id'         => 'name_en',
+        'type'       => 'text'
+    ) );
+
+    $cmb_options->add_group_field( $group_our_team, array(
+        'name'       => esc_html__( 'Member position RU', 'treviso' ),
+        'id'         => 'position_ru',
+        'type'       => 'text'
+    ) );
+    $cmb_options->add_group_field( $group_our_team, array(
+        'name'       => esc_html__( 'Member position EN', 'treviso' ),
+        'id'         => 'position_en',
+        'type'       => 'text'
+    ) );
+
+    $cmb_options->add_group_field( $group_our_team, array(
+        'name'       => esc_html__( 'Member description RU', 'treviso' ),
+        'id'         => 'description_ru',
+        'type'       => 'textarea_small'
+    ) );
+    $cmb_options->add_group_field( $group_our_team, array(
+        'name'       => esc_html__( 'Member description EN', 'treviso' ),
+        'id'         => 'description_en',
+        'type'       => 'textarea_small'
+    ) );
+
 }
 
 add_action( 'cmb2_admin_init', 'project_register_metabox' );

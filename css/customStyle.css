@@ -1,0 +1,19 @@
+
+.mx-auto{
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.portfolio__item-img{
+    width: 100%;
+    height: auto;
+}
+
+.ot-portfolio-item{
+
+    overflow: hidden;
+}
+
+.team__member{
+    height:100%;
+}

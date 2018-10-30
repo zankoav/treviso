@@ -34,6 +34,7 @@ global $b_sendMessage;
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
     <link href="<?= THEM_URI; ?>css/style.css" rel="stylesheet">
+    <link href="<?= THEM_URI; ?>css/customStyle.css" rel="stylesheet">
     <?php wp_head();?>
 </head>
 <body id="page-top">
@@ -122,7 +123,7 @@ global $b_sendMessage;
                 <div class="col-md-6 col-0-gutter">
                     <div class="ot-portfolio-item">
                         <figure class="effect-bubba">
-                            <img src="<?= $project_icon; ?>" alt="<?= $project_title; ?>" class="img-responsive"/>
+                            <img src="<?= $project_icon; ?>" alt="<?= $project_title; ?>" class="img-responsive portfolio__item-img"/>
                             <figcaption>
                                 <h2><?= $project_title; ?></h2>
                                 <p>Branding, Design</p>
@@ -240,46 +241,20 @@ global $b_sendMessage;
         </div>
         <div class="row">
             <!-- team member item -->
-            <div class="col-md-4">
-                <div class="team-item">
-                    <div class="team-image">
-                        <img src="<?= THEM_URI; ?>images/demo/author-2.jpg" class="img-responsive" alt="author">
-                    </div>
-                    <div class="team-text">
-                        <h3>TOM BEKERS</h3>
-                        <div class="team-position">CEO & Web Design</div>
-                        <p>Mida sit una namet, cons uectetur adipiscing adon elit. Aliquam vitae barasa droma.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- end team member item -->
-            <!-- team member item -->
-            <div class="col-md-4">
-                <div class="team-item">
-                    <div class="team-image">
-                        <img src="<?= THEM_URI; ?>images/demo/author-6.jpg" class="img-responsive" alt="author">
-                    </div>
-                    <div class="team-text">
-                        <h3>LINA GOSATA</h3>
-                        <div class="team-position">Photography</div>
-                        <p>Worsa dona namet, cons uectetur dipiscing adon elit. Aliquam vitae fringilla unda mir.</p>
+            <?php foreach ($options['treviso_team'] as $member) : ?>
+                <div class="col-md-4 team__member">
+                    <div class="team-item">
+                        <div class="team-image">
+                            <img src="<?= $member['photo']; ?>" class="img-responsive mx-auto" alt="author">
+                        </div>
+                        <div class="team-text">
+                            <h3><?= $member['name_'.$lang]; ?></h3>
+                            <div class="team-position"><?= $member['position_'.$lang]; ?></div>
+                            <p><?= $member['description_'.$lang]; ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- end team member item -->
-            <!-- team member item -->
-            <div class="col-md-4">
-                <div class="team-item">
-                    <div class="team-image">
-                        <img src="<?= THEM_URI; ?>images/demo/author-4.jpg" class="img-responsive" alt="author">
-                    </div>
-                    <div class="team-text">
-                        <h3>John BEKERS</h3>
-                        <div class="team-position">Marketing</div>
-                        <p>Dolor sit don namet, cons uectetur beriscing adon elit. Aliquam vitae fringilla unda.</p>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach;?>
             <!-- end team member item -->
         </div>
     </div>
